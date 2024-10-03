@@ -11,7 +11,30 @@
             PopulateListWithRandomDoubles(ref listOfDoubles, 10);
             PrintList(listOfDoubles);
 
+            RequestSearch(listOfDoubles);
+            PrintList(listOfDoubles);
+
             Console.ReadKey();
+        }
+
+        static void RequestSearch(List<double> list)
+        {
+            Double searchValue;
+            Console.WriteLine("What value would you like to search for? ");
+
+            if (Double.TryParse(Console.ReadLine(), out searchValue))
+            {
+                int index = LinearSearch.Perform(searchValue, list);
+                if (index < 0)
+                {
+                    Console.WriteLine("NOT FOUND");
+                }
+
+                else
+                {
+                    Console.WriteLine("Found at: " + index);
+                }
+            }
         }
 
         static void PopulateListWithRandomDoubles(ref List<double> list, int size)
