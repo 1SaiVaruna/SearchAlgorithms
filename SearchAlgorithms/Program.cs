@@ -12,7 +12,7 @@
             PrintList(listOfDoubles);
 
             RequestSearch(listOfDoubles);
-            PrintList(listOfDoubles);
+            // PrintList(listOfDoubles);
 
             Console.ReadKey();
         }
@@ -20,7 +20,7 @@
         static void RequestSearch(List<double> list)
         {
             Double searchValue;
-            Console.WriteLine("What value would you like to search for? ");
+            Console.WriteLine("WHAT VALUE WOULD YOU LIKE TO SEARCH FOR? \n");
 
             if (Double.TryParse(Console.ReadLine(), out searchValue))
             {
@@ -28,12 +28,14 @@
                 int index = BinarySearch.Perform(searchValue, list);
                 if (index < 0)
                 {
-                    Console.WriteLine("NOT FOUND");
+                    Console.WriteLine("\nNOT FOUND");
+                    Console.WriteLine("\n- - - - - - - -\n");
                 }
 
                 else
                 {
-                    Console.WriteLine("Found at: " + index);
+                    Console.WriteLine("\nFOUND AT: " + index);
+                    Console.WriteLine("\n- - - - - - - -\n");
                 }
             }
         }
@@ -51,14 +53,16 @@
 
         static void PrintList(List<double> list)
         {
-            Console.WriteLine("\n\nLIST PRINT:\n");
+            Console.WriteLine("LIST PRINT:\n");
+            Console.WriteLine("- - - - - - - - - - -\n");
 
             for (int i = 0; i < list.Count; i++)
             {
                 Console.WriteLine("  " + list[i].ToString());
             }
 
-            Console.WriteLine("\nEnd \n");
+            Console.WriteLine("\nEND \n");
+            Console.WriteLine("- - - - - - - - - - -\n");
         }
     }
 }
