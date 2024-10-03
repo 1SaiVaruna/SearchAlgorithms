@@ -24,7 +24,8 @@
 
             if (Double.TryParse(Console.ReadLine(), out searchValue))
             {
-                int index = LinearSearch.Perform(searchValue, list);
+                // int index = LinearSearch.Perform(searchValue, list);
+                int index = BinarySearch.Perform(searchValue, list);
                 if (index < 0)
                 {
                     Console.WriteLine("NOT FOUND");
@@ -44,6 +45,8 @@
                 double twoDigitDouble = Double.Parse(randomGenerator.NextDouble().ToString("0.00"));
                 list.Add(twoDigitDouble);
             }
+
+            list.Sort();
         }
 
         static void PrintList(List<double> list)
